@@ -132,3 +132,4 @@ MonoBehaviour:
   moveSpeed: 0.05
   arrivalDistance: 0.2
   maxFloatDistance: 2
+  playerTransform: {fileID: 4408196811525658, guid: abc125f00ae369940b2c5c0275186637, type: 3}

@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
         acceleration = maxSpeed / accelerationTime;
         deceleration = maxSpeed / decelerationTime;
         maxSpeedSqr = maxSpeed * maxSpeed;
+
     }
 
     void Update()
@@ -60,6 +61,8 @@ public class Player : MonoBehaviour
                 currentVelocity -= velocityDelta;
             }
         }
+
+        
 
         transform.position += currentVelocity * Time.deltaTime;
     }
