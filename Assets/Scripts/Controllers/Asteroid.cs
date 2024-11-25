@@ -9,17 +9,27 @@ public class Asteroid : MonoBehaviour
     public float maxFloatDistance;
     public Transform playerTransform;
 
-    /*
-    // Start is called before the first frame update
-    void Start()
+
+    public void Update()
     {
-        vector3 asteroidTransform = new vector3(transform.postion.x, transform.postion.y, transform.postion.z);
+
+        //EnemySpeed Vector
+        Vector3 enemySpeed = new Vector3(0.1f, 0.1f, 0f);
+
+        //Getting Enemy Transform
+        Vector3 enemyTransform = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
+        //Calculating Distance From Player To Enemy
+        Vector3 distanceFromPlayer = new Vector3(playerTransform.position.x - transform.position.x, playerTransform.position.y - transform.position.y, playerTransform.position.z - transform.position.z);
+        distanceFromPlayer = distanceFromPlayer.normalized;
+
+        //Updating the x and y postion of the enemy transform based off the distance between player and enemy and speed
+        enemyTransform.x = ((distanceFromPlayer.x * enemySpeed.x) * Time.deltaTime);
+        enemyTransform.y = ((distanceFromPlayer.y * enemySpeed.y) * Time.deltaTime);
+
+        //Updating the transform
+        transform.position = enemyTransform;
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Vector3 distanceToPlayer = new Vector3(playerTransform.position.x - asteroidTransform.position.x, playerTransform.position.y - asteroidTransform.position.y, playerTransform.position.y - asteroidTransform.position.z);
-    }
-    */
 }
