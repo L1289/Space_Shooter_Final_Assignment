@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public void Update()
     {
 
+
         Vector3 enemySpeed = new Vector3(2f, 2f, 0f);
         Vector3 enemyTransform = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
