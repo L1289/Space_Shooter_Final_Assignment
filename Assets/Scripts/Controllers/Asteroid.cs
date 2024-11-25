@@ -13,22 +13,22 @@ public class Asteroid : MonoBehaviour
     public void Update()
     {
 
-        //EnemySpeed Vector
-        Vector3 enemySpeed = new Vector3(0.1f, 0.1f, 0f);
+        //AsteroidSpeed Vector
+        Vector3 asteroidSpeed = new Vector3(0.1f, 0.1f, 0f);
 
-        //Getting Enemy Transform
-        Vector3 enemyTransform = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        //Getting Asteroid Transform
+        Vector3 asteroidTransform = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-        //Calculating Distance From Player To Enemy
+        //Calculating Distance From Player To Asteroid
         Vector3 distanceFromPlayer = new Vector3(playerTransform.position.x - transform.position.x, playerTransform.position.y - transform.position.y, playerTransform.position.z - transform.position.z);
-        distanceFromPlayer = distanceFromPlayer.normalized;
 
-        //Updating the x and y postion of the enemy transform based off the distance between player and enemy and speed
-        enemyTransform.x = ((distanceFromPlayer.x * enemySpeed.x) * Time.deltaTime);
-        enemyTransform.y = ((distanceFromPlayer.y * enemySpeed.y) * Time.deltaTime);
+        //Updating the x and y postion of the Asteroid transform based off the distance between player and Asteroid, and how much speed Asteroid has
+        asteroidTransform.x = ((distanceFromPlayer.x * asteroidSpeed.x) * Time.deltaTime);
+        asteroidTransform.y = ((distanceFromPlayer.y * asteroidSpeed.y) * Time.deltaTime);
+        
 
         //Updating the transform
-        transform.position = enemyTransform;
+        transform.position = asteroidTransform;
 
     }
 

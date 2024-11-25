@@ -62,7 +62,23 @@ public class Player : MonoBehaviour
             }
         }
 
+        Vector3 playerTransform = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 enemyVector = new Vector3(enemyTransform.position.x, enemyTransform.position.y, enemyTransform.position.z);
+        float distanceFromAsteroids = Vector3.Distance(enemyVector, playerTransform);
         
+        if (distanceFromAsteroids >= 2)
+        {
+            maxSpeed = 12f;
+            accelerationTime = 2f;
+            decelerationTime = 2f;
+        }
+
+        else
+        {
+            maxSpeed = 7.5f;
+            accelerationTime = 1f;
+            decelerationTime = 1f;
+        }
 
         transform.position += currentVelocity * Time.deltaTime;
     }
