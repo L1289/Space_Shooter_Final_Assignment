@@ -22,14 +22,18 @@ public class Asteroid : MonoBehaviour
         //Calculating Distance From Player To Asteroid
         Vector3 distanceFromPlayer = new Vector3(playerTransform.position.x - transform.position.x, playerTransform.position.y - transform.position.y, playerTransform.position.z - transform.position.z);
 
-        //Updating the x and y postion of the Asteroid transform based off the distance between player and Asteroid, and how much speed Asteroid has
-        asteroidTransform.x = ((distanceFromPlayer.x * asteroidSpeed.x) * Time.deltaTime);
-        asteroidTransform.y = ((distanceFromPlayer.y * asteroidSpeed.y) * Time.deltaTime);
-        
+        if (Input.GetKey(KeyCode.R))
+        {
 
-        //Updating the transform
-        transform.position = asteroidTransform;
+            //Updating the x and y postion of the Asteroid transform based off the distance between player and Asteroid, and how much speed Asteroid has
+            asteroidTransform.x = ((distanceFromPlayer.x * asteroidSpeed.x) * Time.deltaTime);
+            asteroidTransform.y = ((distanceFromPlayer.y * asteroidSpeed.y) * Time.deltaTime);
 
+
+            //Updating the transform
+            transform.position = asteroidTransform;
+
+        }
     }
 
 }

@@ -62,9 +62,9 @@ public class Player : MonoBehaviour
             }
         }
 
-        Vector3 playerTransform = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        Vector3 playerVector = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         Vector3 enemyVector = new Vector3(enemyTransform.position.x, enemyTransform.position.y, enemyTransform.position.z);
-        float distanceFromAsteroids = Vector3.Distance(enemyVector, playerTransform);
+        float distanceFromAsteroids = Vector3.Distance(enemyVector, playerVector);
         
         if (distanceFromAsteroids >= 2)
         {
