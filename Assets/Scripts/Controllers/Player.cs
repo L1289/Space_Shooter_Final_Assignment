@@ -62,17 +62,20 @@ public class Player : MonoBehaviour
             }
         }
 
+        //Calculates the distance between player and enemy
         Vector3 playerVector = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         Vector3 enemyVector = new Vector3(enemyTransform.position.x, enemyTransform.position.y, enemyTransform.position.z);
-        float distanceFromAsteroids = Vector3.Distance(enemyVector, playerVector);
+        float distanceFromEnemy = Vector3.Distance(enemyVector, playerVector);
         
-        if (distanceFromAsteroids >= 2)
+        //if distance between player and enemy is 2 or less will increase speed
+        if (distanceFromEnemy >= 2)
         {
             maxSpeed = 12f;
             accelerationTime = 2f;
             decelerationTime = 2f;
         }
 
+        //If distance is greater then 2 then will return speed to normal
         else
         {
             maxSpeed = 7.5f;
